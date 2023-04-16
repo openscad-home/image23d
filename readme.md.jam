@@ -1,0 +1,18 @@
+# Image to 3d structure converter 
+
+This application reads an image file and converts it to STL format.
+
+The STL format can be used to 3d print the image and then used as a lamp shade.
+The structure will be thicker where the image is darker and thinner where the image is lighter.
+That way the image will be visible only when the lamp is turned on.
+
+The name of the file and the parameters can be set in the config file.
+The name of the config file is `image23d.properties`.
+It should be in the same folder as the executable.
+
+## Properties configurable
+
+{%@snip:collect from=src/main/java%}
+
+{%#replaceLines replace="/^#//"
+{%@snip (poly) conf\d{3}%}%}

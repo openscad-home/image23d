@@ -1,0 +1,35 @@
+{@comment}\
+{@define asciidoc:output=pom.xml}\
+{@define VERSION=1.0.0-SNAPSHOT}\
+{@define JAVA_SOURCE =20}\
+{@define JAVA_TARGET =20}\
+{@define JAVA_RELEASE=20}\
+{@define MAVEN_COMPILER_PLUGIN_VERSION=3.11.0}\
+{@import https://raw.githubusercontent.com/central7/pom/1/pom.jim}\
+{project image23d}
+    {packaging jar}
+    {GAV :com.javax0:image23d:{VERSION}}
+    {description Converting image files to 3-dimensional objects}
+    {license|The Apache License, Version 2.0|https://www.apache.org/licenses/LICENSE-2.0.txt}
+    {developer|Peter Verhas|peter@verhas.com}
+    {github|verhas|jamal}
+    {properties|
+        {property :project.build.sourceEncoding:UTF-8}
+    }
+    {distributionManagement|
+        {snapshotRepository |ossrh|https://oss.sonatype.org/content/repositories/snapshots}
+        {repository |ossrh|https://oss.sonatype.org/service/local/staging/deploy/maven2/}
+    }
+    {build}
+        {plugins|
+            {plugin|
+            {GAV :org.apache.maven.plugins:maven-compiler-plugin:{MAVEN_COMPILER_PLUGIN_VERSION}}
+            <configuration>
+            <source>{JAVA_SOURCE}</source>
+            <target>{JAVA_TARGET}</target>
+            <release>{JAVA_RELEASE}</release>
+            </configuration>
+            }
+        }
+    {end build}
+{end project}{@xmlFormat}
